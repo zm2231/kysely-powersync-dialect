@@ -1,0 +1,63 @@
+{
+  "name": "@zm2231/kysely-powersync-dialect",
+  "version": "0.1.0",
+  "description": "A Kysely dialect for PowerSync Node clients backed by a local SQLite read replica.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zain",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "peerDependencies": {
+    "kysely": "^0.28.0"
+  },
+  "dependencies": {
+    "@powersync/common": "^1.50.0",
+    "@powersync/node": "^0.18.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^12.8.0",
+    "cross-fetch": "^4.1.0",
+    "undici": "^7.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "kysely": "^0.28.8",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zm2231/kysely-powersync-dialect.git"
+  },
+  "homepage": "https://github.com/zm2231/kysely-powersync-dialect#readme",
+  "bugs": {
+    "url": "https://github.com/zm2231/kysely-powersync-dialect/issues"
+  },
+  "keywords": [
+    "kysely",
+    "kysely-dialect",
+    "powersync",
+    "sqlite",
+    "better-sqlite3",
+    "sync",
+    "offline-first"
+  ]
+}
